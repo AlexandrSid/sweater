@@ -6,6 +6,6 @@
 
     <@l.login "/registration" />
 
-    ${message}
+    ${message?ifExists}
 
 </@c.page>
