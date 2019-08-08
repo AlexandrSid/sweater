@@ -21,7 +21,6 @@ import java.util.UUID;
 
 @Controller
 public class MainController {
-
     @Autowired
     private MessageRepository messageRepository;
 
@@ -59,11 +58,11 @@ public class MainController {
             }
 
             String uuidFile = UUID.randomUUID().toString();
-            String resultFileName = uuidFile + "." + file.getOriginalFilename();
+            String resultfilename = uuidFile + "." + file.getOriginalFilename();
 
-            file.transferTo(new File(uploadPath + "/" + resultFileName));
+            file.transferTo(new File(uploadPath + "/" + resultfilename));
 
-            message.setfilename(resultFileName);
+            message.setfilename(resultfilename);
         }
         messageRepository.save(message);
         Iterable<Message> messages = messageRepository.findAll();
