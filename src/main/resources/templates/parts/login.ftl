@@ -1,5 +1,6 @@
 <#macro login path isRegisterForm>
     <form action="${path}" method="post">
+<#--Username-->
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">User Name :</label>
             <div class="col-sm-6">
@@ -13,6 +14,7 @@
                 </#if>
             </div>
         </div>
+<#--Password-->
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password:</label>
             <div class="col-sm-6">
@@ -26,7 +28,11 @@
                 </#if>
             </div>
         </div>
+
+<#--        IS REGISTER FORM??    -->
+
         <#if isRegisterForm>
+<#--Password Confirmation-->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Password:</label>
                 <div class="col-sm-6">
@@ -40,6 +46,7 @@
                     </#if>
                 </div>
             </div>
+<#--Register email-->
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-6">
@@ -52,6 +59,15 @@
                         </div>
                     </#if>
                 </div>
+            </div>
+<#--Captcha-->
+            <div class="col-sm-6">
+                <div class="g-recaptcha" data-sitekey="6LfbgrQUAAAAALWSO306nO7S7CXf_DPUV78Vej2R"></div>
+                <#if captchaError??>
+                    <div class="alert alert-danger" role="alert">
+                        ${captchaError}
+                    </div>
+                </#if>
             </div>
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />

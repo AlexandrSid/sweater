@@ -48,7 +48,7 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-<!--        Springbootmail-->
+        <!--        Springbootmail-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
@@ -58,6 +58,8 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
+
+
     </dependencies>
 
     <properties>
